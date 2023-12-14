@@ -1,2 +1,2 @@
-web: gunicorn speedpy_simple.wsgi --log-file -
+web: gunicorn project.wsgi --log-file -
 release: bash release.sh
