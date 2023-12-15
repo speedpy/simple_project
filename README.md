@@ -23,9 +23,11 @@ python manage.py runserver
 ```
 
 ### Tailwind
+
 There is Tailwind configuration in the root of the project.
 
 To install standalone Tailwind run one of the following commands depending on your platform:
+
 ```bash
 wget https://github.com/tailwindlabs/tailwindcss/releases/download/v3.3.6/tailwindcss-macos-x64 -o tailwindcss
 wget https://github.com/tailwindlabs/tailwindcss/releases/download/v3.3.6/tailwindcss-macos-arm64 -o tailwindcss
@@ -38,9 +40,30 @@ To compile CSS run:
 
 ```bash
 ./tailwindcss -i mainapp/static/mainapp/input.css -o mainapp/static/mainapp/styles.css
-
 ```
 
-
 ## Project Structure
+
+Project structure is based on the idea of Single App Django Project
+Layout [Watch the video](https://youtu.be/R7y1MkzOk7o?si=bzxWTvF7Wtyl2yW7).
+
+Actually two apps are present: `mainapp` and `usermodel`. But the majority of changes you'll be making in the `mainapp`
+app.
+
+### mainapp
+
+The main app is where you will be putting your code.
+
+Instead of typical files, like `views.py` or `models.py`, you'll find directories with similar names. These are Python
+packages. The reason for this is that it's easier to split your code into multiple files this way.
+
+Since we have only one app, we don't really need to create a separate `urls.py` file, so the whole URL configuration is
+in `project/urls.py`. If you choose to have it separate, you can create a `urls.py` file in the `mainapp` directory and
+import it in the `project/urls.py`
+file. [Including other URLconfs](https://docs.djangoproject.com/en/5.0/topics/http/urls/#including-other-urlconfs)
+
+### usermodel
+
+This app holds the custom user model. It's a good idea to keep it separate from the main app, since it will be pretty
+static and you won't be changing it often.
 
