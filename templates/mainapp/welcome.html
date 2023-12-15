@@ -1,5 +1,78 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block body %}
-    <h1>Home</h1>
-    <p> Welcome to SpeedPy!</p>
+    <div
+  class="flex fixed top-0 left-0 flex-col justify-center items-center p-6 w-screen h-screen leading-6 bg-white text-neutral-800"
+  style="z-index: 1400;"
+>
+  <div class="inline-flex w-64 text-neutral-800" style="height: 310px;">
+    <div class="flex flex-col items-center">
+      <img
+        alt="SpeedPy.com"
+        decoding="async"
+        
+        src="{% static "mainapp/speedpy_logo.png" %}"
+        width="310"
+        height="310"
+        data-nimg="1"
+        loading="eager"
+        style="color:transparent;padding:0;margin:0"
+        class="p-0 m-0 text-transparent"
+      />
+    </div>
+  </div>
+  <h2
+    class="m-0 font-sans text-3xl font-bold xl:text-5xl sm:text-4xl lg:text-5xl"
+    style="line-height: 1.2;"
+  >
+    SpeedPy.com
+  </h2>
+  <h4
+    class="mx-0 mt-4 mb-0 font-sans text-2xl font-bold xl:text-4xl sm:text-2xl lg:text-3xl"
+    style="line-height: 1.2;"
+  >
+    That starter project you've been looking for
+  </h4>
+  
+  <div class="flex flex-row mt-6 text-neutral-800">
+    <a
+      class="inline-flex relative justify-center items-center py-2 px-3 m-0 font-sans text-sm font-semibold uppercase align-middle bg-transparent rounded-lg border-0 appearance-none cursor-pointer select-none text-sky-600 hover:bg-transparent"
+      tabindex="0"
+      target="_blank"
+      rel="noopener"
+      href="https://twitter.com/speedpycom"
+      style="outline: 0px; text-decoration: none; line-height: 1.75; min-width: 64px; transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+      >@speedpycom<span
+        class="overflow-hidden absolute z-0 leading-7 uppercase pointer-events-none"
+        style="inset: 0px;"
+      ></span></a
+    ><a
+      class="inline-flex relative justify-center items-center py-2 px-3 my-0 mr-0 ml-4 font-sans text-sm font-semibold uppercase align-middle bg-transparent rounded-lg border-0 appearance-none cursor-pointer select-none text-sky-600 hover:bg-transparent"
+      tabindex="0"
+      target="_blank"
+      rel="noopener"
+      href="https://appliku.com/discord"
+      style="outline: 0px; text-decoration: none; line-height: 1.75; min-width: 64px; transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+      >Join Discord<span
+        class="overflow-hidden absolute z-0 leading-7 uppercase pointer-events-none"
+        style="inset: 0px;"
+      ></span
+    ></a>
+  </div>
+  <div class="flex flex-row mt-6 text-neutral-800">
+    <a
+      class="inline-flex relative justify-center items-center py-2 px-5 m-0 font-sans text-sm font-semibold uppercase align-middle bg-transparent rounded-lg border border-blue-300 border-solid appearance-none cursor-pointer select-none text-sky-600 hover:border hover:border-solid hover:border-sky-600 hover:bg-transparent"
+      tabindex="0"
+      target="_blank"
+      rel="noopener"
+      href="https://appliku.com/"
+      style="outline: 0px; text-decoration: none; line-height: 1.75; min-width: 64px; transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;"
+      >Deploy With Appliku<span
+        class="overflow-hidden absolute z-0 leading-7 uppercase pointer-events-none"
+        style="inset: 0px;"
+      ></span
+    ></a>
+  </div>
+</div>
+
 {% endblock %}
