@@ -45,7 +45,7 @@ To compile CSS run:
 ## Project Structure
 
 Project structure is based on the idea of Single App Django Project
-Layout [Watch the video](https://youtu.be/R7y1MkzOk7o?si=bzxWTvF7Wtyl2yW7).
+Layout. [Watch the video](https://youtu.be/R7y1MkzOk7o?si=bzxWTvF7Wtyl2yW7) for the reasoning and detailed explanation.
 
 Actually two apps are present: `mainapp` and `usermodel`. But the majority of changes you'll be making in the `mainapp`
 app.
