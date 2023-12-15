@@ -26,6 +26,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
+    'usermodel.apps.UsermodelConfig',
+    'mainapp.apps.MainappConfig',
 ]
 
 MIDDLEWARE = [
@@ -72,9 +75,17 @@ DATABASES = {
     'default': env.db(default='sqlite:///db.sqlite3'),
 
 }
-DATABASES["default"]["ATOMIC_REQUESTS"] = True
-DATABASES["default"]["CONN_MAX_AGE"] = env.int("CONN_MAX_AGE", default=60)
 
+if DATABASES["default"]["ENGINE"] == "django.db.backends.postgresql":
+    DATABASES["default"]["ATOMIC_REQUESTS"] = True
+    DATABASES["default"]["CONN_MAX_AGE"] = env.int("CONN_MAX_AGE", default=60)
+    CI_COLLATION = 'und-x-icu'
+elif DATABASES["default"]["ENGINE"] == "django.db.backends.sqlite3":
+    CI_COLLATION = 'NOCASE'
+elif DATABASES["default"]["ENGINE"] == "django.db.backends.mysql":
+    CI_COLLATION = 'utf8mb4_unicode_ci'
+else:
+    raise NotImplementedError("Unknown database engine")
 CACHES = {
     # Read os.environ['CACHE_URL'] and raises
     # ImproperlyConfigured exception if not found.
@@ -100,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+AUTH_USER_MODEL = 'usermodel.User'
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,

@@ -1,0 +1,19 @@
+{% load static %}
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    {% block extra_head %}{% endblock %}
+        <link rel="stylesheet" href="{% static "mainapp/styles.css" %}"/>
+</head>
+<body>
+{% block body %}
+
+
+{% endblock %}
+
+{% block extra_body %}
+{% endblock %}
+
+<script src="{% static "mainapp/index.js" %}"></script>
+</body>
+</html>

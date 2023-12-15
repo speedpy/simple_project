@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from mainapp import views
 
 urlpatterns = [
+    path('', views.WelcomeToSpeedPyView.as_view(), name='welcome'),
     path('admin/', admin.site.urls),
 ]
