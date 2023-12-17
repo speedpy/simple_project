@@ -36,6 +36,8 @@ wget https://github.com/tailwindlabs/tailwindcss/releases/download/v3.3.6/tailwi
 
 See also: [Tailwind Standalone CLI 3.3.6 Release](https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.3.6)
 
+If you want to use 3rd party addons for Tailwind, then you need to install Node.js and npm. See [Tailwind Installation](https://tailwindcss.com/docs/installation).
+
 To compile CSS run:
 
 ```bash
@@ -66,4 +68,20 @@ file. [Including other URLconfs](https://docs.djangoproject.com/en/5.0/topics/ht
 
 This app holds the custom user model. It's a good idea to keep it separate from the main app, since it will be pretty
 static and you won't be changing it often.
+
+Custom User model has email as a login field.
+
+The `email` field is case-insensitive. Also, the initial migration for this field is created with collation set to `db_collation=settings.CI_COLLATION` and `CI_COLLATION` is it `project/settings.py` depending on the database you are using.
+
+## How to work on the project
+Add your models in new files under `mainapp/models/` directory. Then add the model to `mainapp/models/__init__.py` file. This way you can split your models into multiple files.
+
+Add your views in new files under `mainapp/views/` directory. Then add the view to `mainapp/views/__init__.py` file. 
+
+Add your forms in new files under `mainapp/forms/` directory. Then add the form to `mainapp/forms/__init__.py` file. 
+
+Templates for the app go into the root `templates` directory under `mainapp` subdirectory. For example, if you have a view `mainapp.views.home`, then the template should be at `templates/mainapp/home.html`.
+
+The root template directory is great because you can override templates from other apps.
+
 
