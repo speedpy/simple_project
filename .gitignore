@@ -324,3 +324,5 @@ cython_debug/
 
 /env/
 /tailwindcss
+
+node_modules/
