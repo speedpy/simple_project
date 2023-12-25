@@ -1,5 +1,10 @@
 {
-  "devDependencies": {
-    "tailwindcss": "^3.3.6"
+  "scripts": {
+    "build:css": "tailwindcss -i mainapp/static/mainapp/input.css -o mainapp/static/mainapp/styles.css"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "tailwindcss": "^3.4.0"
   }
 }
