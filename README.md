@@ -5,6 +5,8 @@ This is a simple project to start your Django based webapps.
 ## How to use
 
 1. Clone this repository
+1.1. Remove the `.git` directory
+1.2. Initialize a new git repository 
 2. Create a virtualenv
 3. Install the requirements
 4. Run the migrations
@@ -12,8 +14,10 @@ This is a simple project to start your Django based webapps.
 6. Run the server
 
 ```bash
-git clone
-cd speedpy-simple-project
+git clone git@github.com:speedpy/simple_project.git
+cd simple_project
+rm -rf .git
+git init
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
