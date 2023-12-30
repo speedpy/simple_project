@@ -326,3 +326,4 @@ cython_debug/
 /tailwindcss
 
 node_modules/
+/staticfiles/*
